@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bogdan & Aliya</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+<section class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+<h1>BOGNAN & ALIYA</h1>
+<p>18 June 2026</p>
+</div>
+
+</section>
+
+
+
+<section class="invitation">
+
+<div class="container">
+
+<p class="section-label">WE ARE GETTING MARRIED</p>
+<div class="date-line"></div>
+<p class="invitation-text">
+Дорогие друзья и близкие!
+Мы приглашаем вас разделить с нами
+самый важный день нашей жизни —
+день нашей свадьбы.
+</p>
+
+</div>
+
+</section>
+
+<section class="date">
+
+<div class="container">
+
+<p class="section-label">SAVE THE DATE</p>
+<div class="date-line"></div>
+<h2 class="date-title">18/06/2026</h2>
+
+</div>
+
+</section>
+
+
+<section class="gallery">
+
+<div class="container">
+
+<p class="section-label">OUR MOMENTS</p>
+
+<div class="gallery-grid">
+
+<img src="images/photo1.PNG" alt="">
+<img src="images/photo2.jpg" alt="">
+<img src="images/photo3.jpg" alt="">
+<img src="images/photo4.jpg" alt="">
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="timeline">
+
+  <div class="container">
+
+    <p class="section-label">TIMING</p>
+
+    <div class="timeline-list">
+
+      <div class="timeline-item">
+        <div class="timeline-time">15:30</div>
+        <div class="timeline-content">
+          <h3>Сбор гостей</h3>
+          <p>Просим взять с собой хорошее настроение и свои улыбки</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">16:00</div>
+        <div class="timeline-content">
+          <h3>Церемония</h3>
+          <p>Вы станете свидетелями трогательного момента</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">17:00</div>
+        <div class="timeline-content">
+          <h3>Банкет</h3>
+          <p>Время вкусной еды, танцев и развлечений</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="location">
+
+  <div class="container">
+
+    <p class="section-label">LOCATION</p>
+
+    <div class="location-content">
+
+      <div class="location-image">
+        <img src="images/location.png" alt="">
+      </div>
+
+      <div class="location-info">
+        <h3>Отель Лесной</h3>
+        <p>Нижнекамский район, Борковский кордон</p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Москва+ул+Лесная+14" target="_blank">
+          Открыть в Яндекс Карты
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="dresscode">
+
+  <div class="container">
+
+    <p class="section-label">DRESS CODE</p>
+
+    <p class="dresscode-text">
+      Мы будем рады, если в этот день вы поддержите стиль нашей свадьбы
+      и выберете наряды в предложенной цветовой гамме.
+    </p>
+
+    <div class="dresscode-colors">
+
+      <div class="color" style="background:#5D3E39;"></div>
+      <div class="color" style="background:#AD7661;"></div>
+      <div class="color" style="background:#B2B992;"></div>
+      <div class="color" style="background:#DECBAF;"></div>
+      <div class="color" style="background:#F1E6DE;"></div>
+      <div class="color" style="background:#E1A7A9;"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="rsvp">
+
+  <div class="container">
+
+    <p class="section-label">ОБРАТНАЯ СВЯЗЬ</p>
+
+    <p class="rsvp-text">
+      Пожалуйста, подтвердите ваше присутствие
+    </p>
+
+    <form id="rsvp-form" class="rsvp-form">
+
+      <!-- Имя -->
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="Ваше имя" 
+        required
+      >
+
+      <!-- Радио -->
+      <div class="rsvp-options">
+
+        <label>
+          <input type="radio" name="attendance" value="Приду" required>
+          Смогу прийти
+        </label>
+
+        <label>
+          <input type="radio" name="attendance" value="Не смогу">
+          К сожалению, не смогу
+        </label>
+
+      </div>
+
+      <!-- Количество гостей -->
+      <input 
+        type="number" 
+        name="guests" 
+        placeholder="Количество гостей"
+      >
+
+      <!-- Комментарий -->
+      <input 
+        type="text" 
+        name="comment" 
+        placeholder="Комментарий (по желанию)"
+      >
+
+      <!-- Кнопка -->
+      <button type="submit">Отправить</button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("YOUR_PUBLIC_KEY");
+})();
+
+document.getElementById("rsvp-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "YOUR_SERVICE_ID",
+    "YOUR_TEMPLATE_ID",
+    this
+  ).then(() => {
+    alert("Спасибо! Ваш ответ отправлен ❤️");
+    this.reset();
+  }, () => {
+    alert("Ошибка отправки 😢");
+  });
+});
+</script>
+
+</body>
+
+</html>
