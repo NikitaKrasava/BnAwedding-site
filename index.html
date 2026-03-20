@@ -27,7 +27,7 @@
 
 
 
-<section class="invitation">
+<section class="invitation fade-in">
 
 <div class="container">
 
@@ -44,7 +44,7 @@
 
 </section>
 
-<section class="date">
+<section class="date fade-in">
 
 <div class="container">
 
@@ -57,7 +57,7 @@
 </section>
 
 
-<section class="gallery">
+<section class="gallery fade-in">
 
 <div class="container">
 
@@ -77,7 +77,7 @@
 </section>
 
 
-<section class="timeline">
+<section class="timeline fade-in">
 
   <div class="container">
 
@@ -116,7 +116,7 @@
 </section>
 
 
-<section class="location">
+<section class="location fade-in">
 
   <div class="container">
 
@@ -144,7 +144,7 @@
 </section>
 
 
-<section class="dresscode">
+<section class="dresscode fade-in">
 
   <div class="container">
 
@@ -170,8 +170,7 @@
 
 </section>
 
-<section class="rsvp">
-
+<section class="rsvp fade-in">
   <div class="container">
 
     <p class="section-label">ОБРАТНАЯ СВЯЗЬ</p>
@@ -253,6 +252,20 @@ document.getElementById("rsvp-form").addEventListener("submit", function(e) {
 });
 </script>
 
+<script>
+const elements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
+  
 </body>
 
 </html>
