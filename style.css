@@ -290,38 +290,7 @@ font-size:20px;
 line-height:1.6;
 }
 
-.dresscode-colors{
-display:flex;
-justify-content:center;
-gap:16px;
 
-margin-top:40px;
-}
-
-.color{
-width:50px;
-height:50px;
-
-border-radius:50%;
-}
-
-.color{
-width:50px;
-height:50px;
-border-radius:50%;
-
-transition:0.3s;
-}
-
-.color:hover{
-transform:scale(1.1);
-}
-
-.dresscode-image{
-width:100%;
-display:flex;
-justify-content:center;
-}
 
 .dresscode-image img{
 width:100%;
