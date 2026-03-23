@@ -317,6 +317,20 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
+.dresscode-image{
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+.dresscode-image img{
+width:100%;
+max-width:600px;
+height:auto;
+
+display:block;
+}
+
 /* ===== RSVP ===== */
 
 .rsvp{
@@ -532,18 +546,22 @@ text-align:center;
 
 /* ===== DRESSCODE ===== */
 
-.dresscode-text{
-font-size:16px;
+.dresscode{
+text-align:center;
 }
 
-.dresscode-colors{
-flex-wrap:wrap;
-gap:12px;
+.dresscode-image{
+margin-top:40px;
 }
 
-.color{
-width:40px;
-height:40px;
+.dresscode-image img{
+width:100%;
+max-width:600px;
+
+display:block;
+margin:0 auto;
+
+border-radius:8px;
 }
 
 /* ===== RSVP ===== */
