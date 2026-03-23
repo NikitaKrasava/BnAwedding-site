@@ -290,7 +290,11 @@ font-size:20px;
 line-height:1.6;
 }
 
-
+.dresscode-image{
+width:100%;
+display:flex;
+justify-content:center;
+}
 
 .dresscode-image img{
 width:100%;
