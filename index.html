@@ -237,9 +237,10 @@ document.addEventListener("DOMContentLoaded", function(){
     ).then(() => {
       alert("Спасибо! Ваш ответ отправлен ❤️");
       this.reset();
-    }, () => {
-      alert("Ошибка отправки 😢");
-    });
+    }, (error) => {
+  console.log("ERROR:", error);
+  alert("Ошибка отправки 😢");
+});
   });
 
 });
