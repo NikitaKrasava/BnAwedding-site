@@ -221,23 +221,27 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
-(function(){
-emailjs.init("YOUR_PUBLIC_KEY");
-})();
+document.addEventListener("DOMContentLoaded", function(){
 
-document.getElementById("rsvp-form").addEventListener("submit", function(e) {
-  e.preventDefault();
+  (function(){
+    emailjs.init("fW3dJ-JhaK1l73TnGEY");
+  })();
 
-  emailjs.sendForm(
-    "YOUR_SERVICE_ID",
-    "YOUR_TEMPLATE_ID",
-    this
-  ).then(() => {
-    alert("Спасибо! Ваш ответ отправлен ❤️");
-    this.reset();
-  }, () => {
-    alert("Ошибка отправки 😢");
+  document.getElementById("rsvp-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_idhxzvw",
+      "template_jj8ug5e",
+      this
+    ).then(() => {
+      alert("Спасибо! Ваш ответ отправлен ❤️");
+      this.reset();
+    }, () => {
+      alert("Ошибка отправки 😢");
+    });
   });
+
 });
 </script>
 
