@@ -159,7 +159,8 @@
 </section>
 
   
-<section class="rsvp fade-in">
+<section class="rsvp">
+
   <div class="container">
 
     <p class="section-label">ОБРАТНАЯ СВЯЗЬ</p>
@@ -170,7 +171,6 @@
 
     <form id="rsvp-form" class="rsvp-form">
 
-      <!-- Имя -->
       <input 
         type="text" 
         name="name" 
@@ -178,7 +178,6 @@
         required
       >
 
-      <!-- Радио -->
       <div class="rsvp-options">
 
         <label>
@@ -193,21 +192,18 @@
 
       </div>
 
-      <!-- Количество гостей -->
       <input 
         type="number" 
         name="guests" 
         placeholder="Количество гостей"
       >
 
-      <!-- Комментарий -->
       <input 
         type="text" 
         name="comment" 
         placeholder="Комментарий (по желанию)"
       >
 
-      <!-- Кнопка -->
       <button type="submit">Отправить</button>
 
     </form>
@@ -218,33 +214,6 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-
-  (function(){
-    emailjs.init("fW3dJ-JhaK1l73TnGEY");
-  })();
-
-  document.getElementById("rsvp-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "service_idhxzvw",
-      "template_jj8ug5e",
-      this
-    ).then(() => {
-      alert("Спасибо! Ваш ответ отправлен ❤️");
-      this.reset();
-    }, (error) => {
-  console.log("ERROR:", error);
-  alert("Ошибка отправки 😢");
-});
-  });
-
-});
-</script>
 
 <script>
 const elements = document.querySelectorAll('.fade-in');
@@ -258,6 +227,39 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 elements.forEach(el => observer.observe(el));
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  emailjs.init("fW3dJ-JhaK1l73TnGEY");
+
+  const form = document.getElementById("rsvp-form");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_idhxzvw",
+      "template_jj8ug5e",
+      form
+    )
+    .then(function(response) {
+      console.log("SUCCESS!", response.status, response.text);
+      alert("Спасибо! Ваш ответ отправлен ❤️");
+      form.reset();
+    })
+    .catch(function(error) {
+      console.log("FAILED...", error);
+      alert("Ошибка отправки 😢");
+    });
+
+  });
+
+});
 </script>
   
 </body>
